@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/home/showroom">홈</a>
+                    <a href="/showroom">홈</a>
                 </li>
                 <li>
-                    <a href="/home/categroy">카테고리</a>
+                    <a href="/categroy">카테고리</a>
                 </li>
                 <li>
-                    <a href="/home/register">등록</a>
+                    <a href="/register">등록</a>
                 </li>
                 <li>
                     <a href="#">판매목록</a>
@@ -47,8 +47,8 @@
     
 <div class="container" style="margin-top:50px;">
   <center>
-      <form action="/home/register_save" method="POST">
-        <input type="hidden" value="<%=p.id%>" name="sell_id">
+      <form action="/register_save" method="POST">
+        <!--<input type="hidden" value="" name="sell_id">-->
         
         <fieldset class="form-group">
           <input type="number" class="form-control" id="formGroupExampleInput" placeholder="쿠폰번호를 입력해주세요" name="couponnumber">

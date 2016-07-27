@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      redirect_to "/home/showroom"
+      redirect_to "/showroom"
     else
       redirect_to "/users/sign_in"
     end
@@ -30,7 +30,7 @@ class HomeController < ApplicationController
     new_register.sell_id = params[:sell_id]
     new_register.save
     
-    redirect_to "/home/showroom"
+    redirect_to "/showroom"
     
     
   
