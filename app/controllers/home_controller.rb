@@ -20,7 +20,6 @@ class HomeController < ApplicationController
   
   def register_save
 
-
     new_register = Registration.new
     
     new_productpic = ProductpicUploader.new
@@ -78,5 +77,8 @@ class HomeController < ApplicationController
     @registered_update.save
     
     redirect_to "/showroom"
+  end
+  
+  def category_select
   end
 end
