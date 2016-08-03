@@ -3,7 +3,7 @@ class CreateRegistrations < ActiveRecord::Migration
     create_table :registrations do |t|
 
       
-      t.string :productpic
+      t.string :productpic, default: ""
       t.string :barcode
       t.integer :couponnumber
       t.string :description

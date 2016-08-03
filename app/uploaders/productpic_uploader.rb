@@ -25,10 +25,10 @@ class ProductpicUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
+  #  process :scale => [700, 400]
+  
+  # def scale(700, 400)
+  #     do something
   # end
 
  # Create different versions of your uploaded files:
@@ -45,7 +45,7 @@ class ProductpicUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-     [*('A'..'Z')].sample(8).join + "." + file.extension if original_filename
+     Time.now.to_i.to_s + "." + file.extension if original_filename
   end
 
 end

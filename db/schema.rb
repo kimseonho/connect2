@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160727130252) do
 
   create_table "registrations", force: :cascade do |t|
-    t.string   "productpic"
+    t.string   "productpic",   default: ""
     t.string   "barcode"
     t.integer  "couponnumber"
     t.string   "description"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20160727130252) do
     t.string   "company"
     t.string   "time"
     t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     if user_signed_in?
       redirect_to "/showroom"
-    else2
+    else
       redirect_to "/users/sign_in"
     end
   end
@@ -22,6 +22,10 @@ class HomeController < ApplicationController
 
 
     new_register = Registration.new
+    
+    new_productpic = ProductpicUploader.new
+    new_productpic.store!(params[:productpic])
+    
     new_register.couponnumber = params[:couponnumber]
     new_register.description = params[:description]
     new_register.productname = params[:productname]
@@ -29,11 +33,13 @@ class HomeController < ApplicationController
     new_register.company = params[:company]
     new_register.time = params[:time]
     new_register.price = params[:price]
+    new_register.productpic = new_productpic.url
     new_register.save
     
-    file = params[:productpic]
-    new_productpic = ProductpicUploader.new
-    new_productpic.store!(file)
+    
+
+    
+
 
     redirect_to "/showroom"
     

@@ -55,7 +55,10 @@
                     
                     
                     <a href="/sell/<%= p.id %>">
-                        <img class="img-responsive form-group" src="http://placehold.it/700x400" alt="">
+                    <% unless p.productpic.empty? %>
+                    <img class="img-responsive form-group" src="<%= p.productpic %>">
+                    <% end %>
+                        
                     </a>
                     
                     <div class=>
