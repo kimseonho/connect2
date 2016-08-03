@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/register' => "home#register"
   get '/category' => "home#category"
   post '/register_save' => "home#register_save"
-  get '/sell' => 'home#sell'
+  get '/sell/:id' => 'home#sell'
+  post '/update_content/:id' => "home#rewrite"
+  get '/destroy/:id' => "home#destroy"
+  get '/rewrite_view/:id' => "home#rewrite_view"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -14,14 +14,15 @@
 ActiveRecord::Schema.define(version: 20160727130252) do
 
   create_table "registrations", force: :cascade do |t|
+    t.string   "productpic"
+    t.string   "barcode"
     t.integer  "couponnumber"
     t.string   "description"
     t.string   "productname"
     t.string   "category"
     t.string   "company"
-    t.integer  "time"
+    t.string   "time"
     t.integer  "price"
-    t.integer  "sell_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

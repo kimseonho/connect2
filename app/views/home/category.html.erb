@@ -9,27 +9,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/home/showroom">Connect</a>
+                <a class="navbar-brand" href="/showroom">Connect</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/cagegory">카테고리</a>
-                    </li>
-                    <li>
-                        <a href="/register">등록</a>
-                    </li>
-                    <li>
-                        <a href="#">판매목록</a>
-                    </li>
-                    <li>
-                        <a href="#">보관함</a>
-                    </li>
-                     <li>
-                        <a href="/users/sign_out">로그아웃</a>
-                    </li>
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -54,3 +37,29 @@
             
         </div>
     </nav>
+
+<!-- navigation_2 -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div>
+        <div class="container">
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                <a class="navbar-text" href="/showroom">홈</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                <a class="navbar-text" href="/category">카테고리</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                <a class="navbar-text" href="/register">등록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">판매목록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">보관함</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                <a class="navbar-text" href="/users/sign_out">로그아웃</a>
+            </div>
+        </div>
+    </div>
+</nav>

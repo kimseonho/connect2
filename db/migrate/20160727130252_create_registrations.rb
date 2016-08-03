@@ -2,15 +2,16 @@ class CreateRegistrations < ActiveRecord::Migration
   def change
     create_table :registrations do |t|
 
-    
+      
+      t.string :productpic
+      t.string :barcode
       t.integer :couponnumber
       t.string :description
       t.string :productname
       t.string :category
       t.string :company
-      t.integer :time
+      t.string :time
       t.integer :price
-      t.integer :sell_id
       
 
       t.timestamps null: false

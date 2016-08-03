@@ -9,28 +9,6 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
 			
-			<!-- Menu -->
-            <!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="index.html">Solid State</a></h1>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
-			<nav id="menu">
-				<div class="inner">
-					<h2>Menu</h2>
-					<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-						<li><a href="#">Log In</a></li>
-						<li><a href="#">Sign Up</a></li>
-					</ul>
-					<a href="#" class="close">Close</a>
-				</div>
-			</nav>
-            
             
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,23 +28,6 @@
             
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/category">카테고리</a>
-                    </li>
-                    <li>
-                        <a href="/register">등록</a>
-                    </li>
-                    <li>
-                        <a href="#">판매목록</a>
-                    </li>
-                    <li>
-                        <a href="#">보관함</a>
-                    </li>
-                     <li>
-                        <a href="/users/sign_out">로그아웃</a>
-                    </li>
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -84,24 +45,38 @@
             </div>
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <% @register_list.each do |p| %>
         
-        
-            <div class="col-md-4 col-xs-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="/sell"> <%= p.productname %> </a>
-                </h3>
-                
-            </div>
+        <div class="container">
+            <!-- Projects Row -->
+            <% @register_list.each do |p| %>
             
-        
-        <% end %>
-        
+            
+                <div class="col-md-4 col-xs-4 portfolio-item">
+                    
+                    
+                    <a href="/sell/<%= p.id %>">
+                        <img class="img-responsive form-group" src="http://placehold.it/700x400" alt="">
+                    </a>
+                    
+                    <div class=>
+                        <a href="/sell/<%= p.id %>" class="portfolio-text"> <%= p.productname %> </a>
+                        <!-- Dropdown Menu -->
+                        <div class="btn-group content-right">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="/rewrite_view/<%= p.id %>">수정</a></li>
+                            <li><a href="/destroy/<%= p.id %>">삭제</a></li>
+                          </ul>
+                        </div>
+                    </div>
+             
+                </div>
+                
+            
+            <% end %>
+        </div>
         <!-- /.row -->
 
         <hr>
@@ -153,26 +128,26 @@
 
 <!-- navigation_2 -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div class="container">
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="/showroom">홈</a>
-        </div>
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="/category">카테고리</a>
-        </div>
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="/register">등록</a>
-        </div>
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="#">판매목록</a>
-        </div>
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="#">보관함</a>
-        </div>
-        <div class="col-xs-2">
-            <a class="bottom-nav" href="/users/sign_out">로그아웃</a>
+    <div>
+        <div class="container">
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                <a class="navbar-text" href="/showroom">홈</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                <a class="navbar-text" href="/category">카테고리</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                <a class="navbar-text" href="/register">등록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">판매목록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">보관함</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                <a class="navbar-text" href="/users/sign_out">로그아웃</a>
+            </div>
         </div>
     </div>
 </nav>
-
-

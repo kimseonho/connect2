@@ -12,23 +12,6 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/cagegory">카테고리</a>
-                </li>
-                <li>
-                    <a href="/register">등록</a>
-                </li>
-                <li>
-                    <a href="#">판매목록</a>
-                </li>
-                <li>
-                    <a href="#">보관함</a>
-                </li>
-                 <li>
-                    <a href="/users/sign_out">로그아웃</a>
-                </li>
-            </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -40,33 +23,42 @@
 <hr>
 
 <div class="container">
-    <div class="row">
-        <h1>상품명입니다.</h1>
-        <h3>종류 :</h3>
-        <h3>회사 :</h3>
-        <h3>기한 :</h3>
-        <h3>가격 :</h3>
-        <h3>내용 :</h3>
-    </div>
+        <div>
+            <div class="item name"><%= @register_who.productname %></div>
+            <div class="item price"><%= @register_who.price %></div>    
+                
+                <p class="card-text">종류 : <%= @register_who.category %></p>
+                <p class="card-text">회사 : <%= @register_who.company %></p>
+                <p class="card-text">기한 : <%= @register_who.time %></p>
+                <p class="card-text">내용 : <%= @register_who.description %></p>
+        </div>
 </div>
 
 <hr>
     
 <!--bottom menu bar-->
+<!-- navigation_2 -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div class="container">
-        
-        <a href="/showroom">안녕</a>
-    
-        <a href="/category">카테고리</a>
-    
-        <a href="/register">등록</a>
-    
-        <a href="#">판매목록</a>
-    
-        <a href="#">보관함</a>
-   
-        <a href="/users/sign_out">로그아웃</a>
-        
+    <div>
+        <div class="container">
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                <a class="navbar-text" href="/showroom">홈</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                <a class="navbar-text" href="/category">카테고리</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                <a class="navbar-text" href="/register">등록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">판매목록</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                <a class="navbar-text" href="#">보관함</a>
+            </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                <a class="navbar-text" href="/users/sign_out">로그아웃</a>
+            </div>
+        </div>
     </div>
 </nav>
