@@ -19,7 +19,51 @@
         <!-- /.container -->
     </nav>
     
-    
+     <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">최신목록
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        
+        <div class="container">
+            <!-- Projects Row -->
+            <% @category.regeach do |p| %>
+            
+            
+                <div class="col-md-4 col-xs-4 portfolio-item">
+                    
+                    
+                    <a href="/sell/<%= p.id %>">
+                    <% unless p.productpic.empty? %>
+                    <img class="img-responsive form-group" src="<%= p.productpic %>" width="500" height="500" />
+                    <% end %>
+                        
+                    </a>
+                    
+                    <div class=>
+                        <a href="/sell/<%= p.id %>" class="portfolio-text"> <%= p.productname %> </a>
+                        <!-- Dropdown Menu -->
+                        <div class="btn-group content-right">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="/rewrite_view/<%= p.id %>">수정</a></li>
+                            <li><a href="/destroy/<%= p.id %>">삭제</a></li>
+                          </ul>
+                        </div>
+                    </div>
+             
+                </div>
+                
+            
+            <% end %>
+        </div>
+        <!-- /.row -->
     
 <!-- navigation_2 -->
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">

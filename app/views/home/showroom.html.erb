@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 
 
-
-
-
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -56,7 +52,7 @@
                     
                     <a href="/sell/<%= p.id %>">
                     <% unless p.productpic.empty? %>
-                    <img class="img-responsive form-group" src="<%= p.productpic %>">
+                    <img class="img-responsive form-group" src="<%= p.productpic %>" width="500" height="500" />
                     <% end %>
                         
                     </a>

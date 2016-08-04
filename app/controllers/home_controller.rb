@@ -28,29 +28,23 @@ class HomeController < ApplicationController
     new_register.couponnumber = params[:couponnumber]
     new_register.description = params[:description]
     new_register.productname = params[:productname]
-    new_register.category = params[:category]
+    new_register.category_id = params[:category]
     new_register.company = params[:company]
     new_register.time = params[:time]
     new_register.price = params[:price]
     new_register.productpic = new_productpic.url
-    new_register.save
-    
-    
-
-    
-
-
-    redirect_to "/showroom"
-    
-    
-  
-  end
-  
-  
-  def category
+    if new_register.save
+      redirect_to "/showroom"
+    else
+      render :text => new_register.errors.messages
+    end   
       
+    
+    
+  
   end
   
+
   def sell
     @register_who = Registration.find(params[:id])
   end
@@ -70,7 +64,7 @@ class HomeController < ApplicationController
     @registered_update.couponnumber = params[:couponnumber]
     @registered_update.description = params[:description]
     @registered_update.productname = params[:productname]
-    @registered_update.category = params[:category]
+    @registered_update.category_id = params[:category]
     @registered_update.company = params[:company]
     @registered_update.time = params[:time]
     @registered_update.price = params[:price]
@@ -79,6 +73,12 @@ class HomeController < ApplicationController
     redirect_to "/showroom"
   end
   
+    
+  def category
+  end
+  
+  
   def category_select
+    @category = Category.find(params[:id])
   end
 end

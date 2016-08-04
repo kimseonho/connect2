@@ -3,14 +3,20 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get '/profile' => "home#profile"
+  
   get '/showroom' => "home#showroom"
+  
   get '/register' => "home#register"
-  get '/category' => "home#category"
   post '/register_save' => "home#register_save"
-  get '/sell/:id' => 'home#sell'
-  post '/update_content/:id' => "home#rewrite"
   get '/destroy/:id' => "home#destroy"
   get '/rewrite_view/:id' => "home#rewrite_view"
+  
+  get '/category' => "home#category"
+  get '/category/:id' => "home#category_select"
+
+  get '/sell/:id' => 'home#sell'
+  post '/update_content/:id' => "home#rewrite"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
