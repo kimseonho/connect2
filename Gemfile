@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'mini_magick'
 gem "fog-aws"
