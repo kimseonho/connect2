@@ -19,6 +19,7 @@
         <!-- /.container -->
     </nav>
     
+    <div class="container">
      <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
@@ -31,17 +32,14 @@
         
         <div class="container">
             <!-- Projects Row -->
-            <% @category.regeach do |p| %>
+            <% @category.registrations.each do |p| %>
             
             
                 <div class="col-md-4 col-xs-4 portfolio-item">
                     
                     
                     <a href="/sell/<%= p.id %>">
-                    <% unless p.productpic.empty? %>
                     <img class="img-responsive form-group" src="<%= p.productpic %>" width="500" height="500" />
-                    <% end %>
-                        
                     </a>
                     
                     <div class=>
@@ -64,6 +62,7 @@
             <% end %>
         </div>
         <!-- /.row -->
+    </div>
     
 <!-- navigation_2 -->
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
@@ -82,7 +81,7 @@
                     <a class="navbar-text" href="#">판매목록</a>
                 </div>
                 <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
-                    <a class="navbar-text" href="#">보관함</a>
+                    <a class="navbar-text" href="/cabinet">보관함</a>
                 </div>
                 <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
                     <a class="navbar-text" href="/users/sign_out">로그아웃</a>

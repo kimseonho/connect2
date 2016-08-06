@@ -8,7 +8,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.integer :couponnumber
       t.string :description
       t.string :productname
-      t.string :category_id
+      t.integer :category_id
       t.string :company
       t.string :time
       t.integer :price

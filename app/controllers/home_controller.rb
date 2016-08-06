@@ -33,15 +33,10 @@ class HomeController < ApplicationController
     new_register.time = params[:time]
     new_register.price = params[:price]
     new_register.productpic = new_productpic.url
-    if new_register.save
+    
+    new_register.save
       redirect_to "/showroom"
-    else
-      render :text => new_register.errors.messages
-    end   
-      
-    
-    
-  
+
   end
   
 
@@ -81,4 +76,8 @@ class HomeController < ApplicationController
   def category_select
     @category = Category.find(params[:id])
   end
+  
+  def cabinet
+  end
+  
 end

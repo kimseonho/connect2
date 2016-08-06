@@ -51,10 +51,7 @@
                     
                     
                     <a href="/sell/<%= p.id %>">
-                    <% unless p.productpic.empty? %>
                     <img class="img-responsive form-group" src="<%= p.productpic %>" width="500" height="500" />
-                    <% end %>
-                        
                     </a>
                     
                     <div class=>
@@ -141,8 +138,8 @@
             <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
                 <a class="navbar-text" href="#">판매목록</a>
             </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
-                <a class="navbar-text" href="#">보관함</a>
+            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
+                <a class="navbar-text" href="/cabinet">보관함</a>
             </div>
             <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
                 <a class="navbar-text" href="/users/sign_out">로그아웃</a>
