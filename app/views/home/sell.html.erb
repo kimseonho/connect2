@@ -1,125 +1,129 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/showroom">Connect</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+<!-- 상품 클릭 시 -->
 
 
-<!--sell ad confirm-->
-<hr>
+
+    <!-- 헤더 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/showroom">Connect</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <hr>
     
+    
+    
+    
+    
+    
+    <!-- 콘텐츠 -->
     <div class="container">
         
+        <!-- 상품 이미지 -->
         <div class="item_image">
            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22318%22%20height%3D%22180%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3C!--%0ASource%20URL%3A%20holder.js%2F100px180%2F%0ACreated%20with%20Holder.js%202.8.2.%0ALearn%20more%20at%20http%3A%2F%2Fholderjs.com%0A(c)%202012-2015%20Ivan%20Malopinsky%20-%20http%3A%2F%2Fimsky.co%0A--%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%3C!%5BCDATA%5B%23holder_1561d16321c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%5D%5D%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1561d16321c%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%2F%3E%3Cg%3E%3Ctext%20x%3D%22118.0859375%22%20y%3D%2297.2%22%3E318x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image cap">
-            
         </div>
         
-            <div class="goodsinfo">
-                    <div>
-                        <div class="item_name"><%= @register_who.productname %></div>
-                        <div class="item_price"><strong><%= @register_who.price %></strong>원</div>    
-                        
-                        <div class="info">
-                            <span class="icon_heart"></span>
-                            <span class="icon_view"></span>
-                        </div>
-                        
-                
-                        
-                            <div class="txtbox">
-                               
-                                <ul class="infolist">
-                                    <li><em>종류</em> &nbsp;&nbsp; <%= @register_who.category %></li>
-                                    <li><em>회사</em> &nbsp;&nbsp; <%= @register_who.company %></li>
-                                    <li><em>기한</em> &nbsp;&nbsp; <%= @register_who.time %></li>
-                                </ul>
-                                
-                                
-                                <p><%= @register_who.description %></p>
-                                
-                            </div>
-                        
-                    </div>
-            </div>
-    
-                    <div class="sellershop">
-                        <a href="/shop/307469/products">
-                            
-                            <dl>
-                                <dt>
-                                    <em>*판매자ID</em>님의 상점
-                                    <span class="icon icon_friend">friend</span>
-                                </dt>
-                                <dd class="review">
-                                    <span class="graph">
-                                        <em style="width:100%">*별갯수</em>
-                                    </span>
-                                    <span class="icon_review">*리뷰개수</span>
-                                </dd>
-                                <dd class="info">
-                                    <span>*상품개수</span>
-                                    <span>*팔로우수</span>
-                                </dd>
-                                <dd class="photo">
-
-                                </dd>
-                            </dl>
-                        </a>
-                    </div>
-            <div class="container">
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn-default1"><a href="#none" class="tSubmit1 "><span>구매하기</span></a></button>
-                  </div>
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn-default2"><a href="#none" class="tSubmit2 " ><span>장바구니</span></a></button>
-                  </div>
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn-default3"><a href='/showroom' class="tSubmit2" ><span>목록으로</span></a></button>
-                  </div>
+        <!-- 상품 정보 -->
+        <div class="goodsinfo">
+            <div>
+                <div class="item_name"><%= @register_who.productname %></div>
+                <div class="item_price"><strong><%= @register_who.price %></strong>원</div>    
+                    
+                <div class="info">
+                    <span class="icon_heart"></span>
+                    <span class="icon_view"></span>
                 </div>
+                
+                <div class="txtbox">
+                    <ul class="infolist">
+                        <li><em>종류</em> &nbsp;&nbsp; <%= @register_who.category %></li>
+                        <li><em>회사</em> &nbsp;&nbsp; <%= @register_who.company %></li>
+                        <li><em>기한</em> &nbsp;&nbsp; <%= @register_who.time %></li>
+                    </ul>
+                    <p><%= @register_who.description %></p>
+                </div><!-- infolist -->
             </div>
+        </div><!-- goodsinfo -->
 
-<hr>
-    
-<!--bottom menu bar-->
-<!-- navigation_2 -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div>
+        <!-- 판매자 정보 -->
+        <div class="sellershop">
+            <a href="/shop/307469/products">
+                <dl>
+                    <dt>
+                        <em>*판매자ID</em>님의 상점
+                        <span class="icon icon_friend">friend</span>
+                    </dt>
+                    <dd class="review">
+                        <span class="graph">
+                            <em style="width:100%">*별갯수</em>
+                        </span>
+                        <span class="icon_review">*리뷰개수</span>
+                    </dd>
+                    <dd class="info">
+                        <span>*상품개수</span>
+                        <span>*팔로우수</span>
+                    </dd>
+                    <dd class="photo">
+                    </dd>
+                </dl>
+            </a>
+        </div>
+              
+              
+        <!-- 버튼 -->        
         <div class="container">
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
-                <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
-                <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
-                <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
-                <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
-                <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
-                <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn-default1"><a href="#none" class="tSubmit1 "><span>구매하기</span></a></button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn-default2"><a href="#none" class="tSubmit2 " ><span>장바구니</span></a></button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn-default3"><a href='/showroom' class="tSubmit2" ><span>목록으로</span></a></button>
+              </div>
             </div>
         </div>
-    </div>
-</nav>
+        <hr>
+  
+  
+  
+  
+  
+    
+    <!-- 하단 메뉴 바 -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div>
+            <div class="container">
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                    <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
+                </div>
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                    <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
+                </div>
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                    <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
+                </div>
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                    <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
+                </div>
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
+                    <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
+                </div>
+                <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                    <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
+                </div>
+            </div>
+        </div>
+    </nav>

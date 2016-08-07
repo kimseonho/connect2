@@ -11,7 +11,6 @@ class HomeController < ApplicationController
   
   def showroom
    @register_list = Registration.all
-     
   end
   
   def register

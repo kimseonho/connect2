@@ -1,57 +1,56 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                
-                
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Connect</a>
-        </div>
-        
-            
-        
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    
-</nav>
-    
-<div class="container" style="margin-top:50px;">
-  <center>
-      <form action="/register_save" method="POST" enctype="multipart/form-data">
-        <!--<input type="hidden" value="" name="sell_id">-->
-        
-        <fieldset class="form-group form-control">
-        <input type="file" name="productpic" accept="image/*">
-        </fieldset>
-         
+<!-- 등록 -->
 
 
-        
-        <fieldset class="form-group">
-          <input type="number" class="form-control" id="formGroupExampleInput" placeholder="쿠폰번호를 입력해주세요" name="couponnumber">
-        </fieldset>
-        
-        
-        <fieldset class="form-group">
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="물품명" name="productname">
-        </fieldset>
-        
-        <fieldset class="form-group">
-          <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="상세설명" rows="4" name="description"></textarea>
-        </fieldset>
-        
-        
-        
+  
+  <!-- 헤더 -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Connect</a>
+          </div><!-- narvar header --> 
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          </div><!-- /.navbar-collapse -->
+      </div>
+  </nav>
+      
+      
+      
+      
+      
+  <!-- 상품 입력 폼 -->    
+  <div class="container" style="margin-top:50px;">
+    <center>
+        <form action="/register_save" method="POST" enctype="multipart/form-data">
+          <!--<input type="hidden" value="" name="sell_id">-->
+          
+          <!-- 이미지 첨부 -->
+          <fieldset class="form-group form-control">
+          <input type="file" name="productpic" accept="image/*">
+          </fieldset>
+           
+          <!-- 쿠폰 번호 입력 -->
+          <fieldset class="form-group">
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="쿠폰번호를 입력해주세요" name="couponnumber">
+          </fieldset>
+          
+          <!-- 물품명 입력 -->
+          <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="물품명" name="productname">
+          </fieldset>
+          
+          <!-- 상세설명 입력 -->
+          <fieldset class="form-group">
+            <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="상세설명" rows="4" name="description"></textarea>
+          </fieldset>
+          
+          <!-- 카테고리 입력 -->
           <select class="form-gorup form-control" name="category">
             <option value="1">카페/디저트</option>
             <option value="2">아이스크림/도넛</option>
@@ -62,119 +61,129 @@
           </select>
           <div id="category"></div>
           <br>
+            
+          <!-- 회사 입력 -->  
+          <div class="row">
+            <div class="col-md-8 col-xs-8">
+              <select class="form-group form-control" name="company" >
+                <option value="com1">회사1</option>
+                <option value="com2">회사2</option>
+                <option value="com3">회사3</option>
+                <option value="com4">회사4</option>
+                <option value="com5">회사5</option>
+                <option value="com6">회사6</option>
+              </select>
+              <div id="company"></div>
+            </div>  <!-- col-md-8 col-xs-8 -->
+            
+            <!-- 유효기간 입력 -->
+            <div class="col-md-4 col-xs-4">
+              <fieldset class="form-group">
+                <input class="form-control" type="date" name="time" id="datepicker" placeholder="유효기간">
+              </fieldset>
+            </div> <!-- col-md-4 col-xs-4 -->
           
-        <div class="row">
-          <div class="col-md-8 col-xs-8">
-          <select class="form-group form-control" name="company" >
-            <option value="com1">회사1</option>
-            <option value="com2">회사2</option>
-            <option value="com3">회사3</option>
-            <option value="com4">회사4</option>
-            <option value="com5">회사5</option>
-            <option value="com6">회사6</option>
-          </select>
-          <div id="company"></div>
-        </div>  
+          </div> <!-- row -->
           
         
-          <div class="col-md-4 col-xs-4">
-
+          <!-- 가격 입력 -->
           <fieldset class="form-group">
-            <input class="form-control" type="date" name="time" id="datepicker" placeholder="유효기간">
+            <input class="form-control" type="number" name="price" min="0" max="999999" step="100" placeholder="가격">
           </fieldset>
-          </div>
-        </div>
-        
-    
-        <fieldset class="form-group">
-          <input class="form-control" type="number" name="price" min="0" max="999999" step="100" placeholder="가격">
-        </fieldset>
-
-
-        
-        <a class="btn btn-primary" href="/showroom">돌아가기</a>
-        <button type="submit" class="btn btn-primary">등록하기</button>
-      </form>
-    </center>
-</div>
-
-<hr>
   
-<div class="container">  
-  <!-- Footer -->
-  <footer>
-      <div class="row">
-          <div class="col-lg-12">
-              <p>Copyright &copy; Your Website 2014</p>
+  
+          <!-- 돌아가기, 등록하기 버튼 -->
+          <a class="btn btn-primary" href="/showroom">돌아가기</a>
+          <button type="submit" class="btn btn-primary">등록하기</button>
+        </form>
+      </center>
+  </div><!-- container -->
+  <hr>
+    
+    
+    
+    
+    
+  <!-- 푸터 -->
+  <div class="container">  
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+  </div>
+  
+  
+  
+  
+  
+  
+  <!-- 하단 메뉴 바-->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+      <div>
+          <div class="container">
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                  <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                  <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                  <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                  <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
+                  <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                  <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
+              </div>
           </div>
       </div>
-      <!-- /.row -->
-  </footer>
-</div>
-
-<!-- navigation_2 -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div>
-        <div class="container">
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
-                <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
-                <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
-                <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
-                <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
-                <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
-                <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-
-
-
-
-<!-- 유효기간 / 카테고리 / 회사 -->
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+  </nav>
   
- 
-  $(function () {
-      var cc = 0;
-      $('select').click(function () {        
-          cc++;
-          if (cc == 2) {
-              $(this).change();
-              cc = 0;
-          }         
-      }).change (function () {
-          $('#category').append('Changed triggered ');
-          cc = -1;
-      });      
-  });
   
-  $(function () {
-      var cc = 0;
-      $('select').click(function () {        
-          cc++;
-          if (cc == 2) {
-              $(this).change();
-              cc = 0;
-          }         
-      }).change (function () {
-          $('#company').append('Changed triggered ');
-          cc = -1;
-      });      
-  });
-
-</script>
+  
+  
+  
+  <!-- 유효기간 / 카테고리 / 회사 -->
+  <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    
+   
+    $(function () {
+        var cc = 0;
+        $('select').click(function () {        
+            cc++;
+            if (cc == 2) {
+                $(this).change();
+                cc = 0;
+            }         
+        }).change (function () {
+            $('#category').append('Changed triggered ');
+            cc = -1;
+        });      
+    });
+    
+    $(function () {
+        var cc = 0;
+        $('select').click(function () {        
+            cc++;
+            if (cc == 2) {
+                $(this).change();
+                cc = 0;
+            }         
+        }).change (function () {
+            $('#company').append('Changed triggered ');
+            cc = -1;
+        });      
+    });
+  
+  </script>
