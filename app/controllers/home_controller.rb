@@ -20,7 +20,8 @@ class HomeController < ApplicationController
   def register_save
 
     new_register = Registration.new
-    
+	new_register.user_id = current_user.id 
+   
     new_productpic = ProductpicUploader.new
     new_productpic.store!(params[:productpic])
     

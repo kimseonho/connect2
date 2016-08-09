@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   
   get '/register' => "home#register"
   post '/register_save' => "home#register_save"
-  get '/destroy/:id' => "home#destroy"
-  get '/rewrite_view/:id' => "home#rewrite_view"
+  get '/destroy/:id' => "home#destroy", as: "home_destroy"
+  get '/rewrite_view/:id' => "home#rewrite_view", as: "home_rewrite"
   
   get '/category' => "home#category"
   get '/category/:id' => "home#category_select"

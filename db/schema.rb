@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160804134341) do
     t.string   "company"
     t.string   "time"
     t.integer  "price"
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160804134341) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"

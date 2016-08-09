@@ -12,7 +12,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :company
       t.string :time
       t.integer :price
-      
+	  t.integer :user_id      
 
       t.timestamps null: false
     end
