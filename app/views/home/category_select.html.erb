@@ -45,12 +45,11 @@
                     <div class="#">
                         <a href="/sell/<%= p.id %>" class="portfolio-text"> <%= p.productname %> </a>
     
+                        <!-- 수정 삭제 버튼 -->
                         <div class="btn-group content-right">
                           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span><span class="caret"></span>
                           </button>
-                          
-                          <!-- 수정 삭제 버튼 -->
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="/rewrite_view/<%= p.id %>">수정</a></li>
                             <li><a href="/destroy/<%= p.id %>">삭제</a></li>
