@@ -1,11 +1,12 @@
 class HomeController < ApplicationController
 
   def index
-    if user_signed_in?
-      redirect_to "/showroom"
-    else
-      redirect_to "/users/sign_in"
-    end
+    # if user_signed_in?
+    #   redirect_to "/showroom"
+    # else
+    #   redirect_to "/users/sign_in"
+    # end
+    redirect_to "/showroom"
   end
   
   
@@ -42,6 +43,7 @@ class HomeController < ApplicationController
 
   def sell
     @register_who = Registration.find(params[:id])
+    
   end
   
   def destroy
@@ -78,6 +80,24 @@ class HomeController < ApplicationController
   end
   
   def cabinet
+  end
+
+  def destroy_user
+    @user = User.find(params[:id])
+    @user.destroy
+    
+    if @user.destroy
+      redirect_to root_url, notice: "User deleted."
+    end
+  end
+  
+  def search
+    @register_list =  Registration.all
+      if params[:search]
+        @register_list =  Registration.search(params[:search]).order("created_at DESC")
+      else
+        @register_list =  Registration.all.order('created_at DESC')
+    end
   end
   
 end

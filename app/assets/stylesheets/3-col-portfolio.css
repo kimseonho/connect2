@@ -9,7 +9,10 @@ body {
 }
 
 .portfolio-item {
-    margin-bottom: 25px;
+    margin-bottom: 150px;
+    height: 300px;
+    width: 700px;
+    
 }
 
 footer {

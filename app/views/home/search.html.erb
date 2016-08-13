@@ -1,3 +1,4 @@
+
 <!-- 홈 -->
 
     <!-- 콘텐츠 -->
@@ -11,12 +12,7 @@
             </div>
         </div>
         
-       <!-- 검색, 나중에 application.erb로 적용해서 만들어야함 -->
-     
-         
-
-        
-        
+        <% if @register_list.present? %>
         <!-- Register 전체 출력 -->
         <div class="container">
             <!-- Projects Row -->
@@ -66,6 +62,10 @@
         <!-- container -->
         <hr>
     
+     <% else %>
+            <p> '<%= params[:search] %>'에 대한 검색결과가 없습니다.</p>
+          <% end %>
+
     
     
     
@@ -100,8 +100,3 @@
         <hr>
     
     
-    
-    
-    
-
-

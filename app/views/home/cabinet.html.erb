@@ -1,62 +1,33 @@
 <!-- 보관함 -->
 
-
-
-<!-- 헤더 -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/showroom">Connect</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
-    
-    
-    
-    
-    
     
 <!--   cabinet    -->
     <div class="container">
-        <p>내 보관함</p>
-    </div>
-    
-    
-    
-    
-    
-    
-<!-- 하단 메뉴 바 -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div>
-        <div class="container">
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
-                <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
-                <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
-                <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
-                <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
-                <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
-            </div>
-            <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
-                <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
+        <div>
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                내 보관함
+              </a>
+                <ul class="list-group">
+                  <li class="list-group-item"><div class="alert alert-danger" role="alert">사용불가</div>제품1<button type="button" class="buy-button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="정말 사용하시겠습니까?
+                    다시 되돌아 갈 수 없습니다">
+                      구매하기
+                    </button></li>
+                  <li class="list-group-item"><div class="alert alert-success" role="alert">사용가능</div>제품2<a href="#" button type="button" class="buy-button">구매하기</a></li>
+                  <li class="list-group-item"><div class="alert alert-warning" role="alert">D-7</div>제품3<a href="#" button type="button" class="buy-button">구매하기</a></li>
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  dd
+                </button>
             </div>
         </div>
     </div>
-</nav>
+    
+    
+<!--script-->
+<script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+</script>

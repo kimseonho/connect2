@@ -35,8 +35,95 @@
 </head>
 <body>
 
+  <!-- 헤더 -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Connect</a>
+          
+          
+          <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if user_signed_in? %>
+                <li><a><%= current_user.email %></a></li>
+                <li><a><%= current_user.admin %></a></li>
+                <li role="separator" class="divider"></li>
+                
+                <li><a href="/users/edit">정보 수정</a></li>
+                <li><%= link_to "로그아웃", destroy_user_session_path, data: {confirm: "로그아웃 하시겠습니까?"} %></li>
+              <% else %>
+                <li><%= link_to "로그인", new_user_session_path %></li>
+                <li><%= link_to "회원가입", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      
+          <%= form_tag('/home/search', :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "제목/내용 검색" %>
+          <%= submit_tag "검색" %>
+          <% end %>  
 
-<%= yield %>
+          </div><!-- narvar header --> 
+  </nav>
+      
+      
+      
+ <div class="container">     
+    <%= yield %>
+ </div> <!-- container -->
+        
+        
+        
+        
+     <!-- 푸터 -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div><!-- /.row -->
+        </footer>
+        
+    </div><!-- /.container -->
+    
+ 
+ 
+  <!-- 하단 메뉴 바-->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+      <div>
+          <div class="container">
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/showroom'">
+                  <a class="navbar-text" href="/showroom"><img src='<%= image_url 'glyphicons/glyphicons-21-home.png' %>'><br>홈</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/category'">
+                  <a class="navbar-text" href="/category"><img src='<%= image_url 'glyphicons/glyphicons-156-show-big-thumbnails.png' %>'><br>카테고리</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/register'">
+                  <a class="navbar-text" href="/register"><img src='<%= image_url 'glyphicons/glyphicons-31-pencil.png' %>'><br>등록</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='#'">
+                  <a class="navbar-text" href="#"><img src='<%= image_url 'glyphicons/glyphicons-710-list-numbered.png' %>'><br>판매목록</a>
+              </div>
+              <div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/cabinet'">
+                  <a class="navbar-text" href="/cabinet"><img src='<%= image_url 'glyphicons/glyphicons-203-shopping-cart.png' %>'><br>보관함</a>
+              </div>
+              <!--<div class="col-xs-2 col-md-2 col-sm-2 bottom-navbar-div" onclick="location.href='/users/sign_out'">
+                  <a class="navbar-text" href="/users/sign_out"><img src='<%= image_url 'glyphicons/glyphicons-64-power.png' %>'><br>로그아웃</a>
+              </div>-->
+          </div>
+      </div>
+  </nav>
+  
+  
+
 
 </body>
 </html>
